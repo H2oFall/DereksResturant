@@ -1,12 +1,24 @@
 <html>
   <head></head>
     <body>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
     <script>
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200) {
           var mydata = JSON.parse(this.responseText);
-          window.alert(mydata.bento[0].price);
+          window.alert(mydata.bento[1].ingredients[3]);// bento[1].ingredients[3]
         }
       };
       xmlhttp.open("GET","bento.json", true);

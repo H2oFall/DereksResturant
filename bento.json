@@ -11,6 +11,19 @@
     "ube",
     "edamame"
     ]
+    },
+    {
+    "type":"Soft Shell Crab",
+  "price":7.79,
+  "ingredients":[
+    "rice",
+    "ume",
+    "Crab",
+    "furikake",
+    "ube",
+    "edamame"
+    ]
     }
+    
     ]
 }
