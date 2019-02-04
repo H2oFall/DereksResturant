@@ -1,28 +1,36 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="resturant.css" async>
+    <script src="resturant.js" defer></script>
+  </head>
     <body>
-      <div>
+      <div id="menu">
+        <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+      <h1 id="itemOneName">Item One</h1>
+      <p id="itemOneDesc">"Item Description"</p>
+      <p id="itemOnePrice">"Price"</p>
+    <form onsubmit="event.preventDefault(); addamountitem1()">
+        <input type="number" id="itemoneamount" min=1 max=100>
+        <input type="submit" id="input">
+      </form>
+  </div>
+</div>
+
+      </div>
+      <div id="quantity">
         
       </div>
-      <div>
-        
-      </div>
-      <div>
-        
+      <div id="total">
+        <ol id='List'>
+        </ol>
       </div>
       <div>
         
       </div>
     <script>
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200) {
-          var mydata = JSON.parse(this.responseText);
-          window.alert(mydata.bento[1].ingredients[3]);// bento[1].ingredients[3]
-        }
-      };
-      xmlhttp.open("GET","bento.json", true);
-      xmlhttp.send();
+
     </script>
   </body>
 </html>
