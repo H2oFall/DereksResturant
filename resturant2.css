@@ -1,0 +1,76 @@
+body {
+    background-color:#e68789;
+  }
+    
+    #name {
+      overflow: hidden;
+     
+      text-align: center;
+      background-color:#ff6366;
+
+      width: 97.5vw; 
+    }
+    
+    #itemTable {
+      display: grid; 
+      grid-gap: 1vw 1vh;
+      grid-template-columns: 24vw 24vw 24vw 24vw;
+    }
+    
+    #itemDiv {
+      display: grid;
+      text-align: justify;
+     
+      text-align: center;
+      background-color:#ff6366;
+
+    }
+    
+    #itemLogDiv {
+      grid-row: 1 / 4;
+      text-align: center;
+      grid-column: 4 / 4;
+     float: right;
+      background-color:#ff6366;
+    }
+    
+    #listDiv {
+      display: inherit;
+      text-align: center;
+      width: 95%;
+    }
+    #itemList {
+      overflow: auto;
+      vertical-align: middle;
+      display: inherit;
+      text-align: center;
+      width: 20vw;
+      padding-right: 5vw;
+    }
+    input {
+      text-align: justify;
+      text-align: center;
+    }
+    
+    img {
+      width: 5vw;
+      height: 10vh;
+      justify-content: center;
+    }
+h1{
+    font-size: 5vh;
+}    
+
+    p,
+    li {
+      font-size: 1.5vw;
+      vertical-align: middle;
+
+      text-align: center;
+    }
+.tip:hover {
+    background-color: aquamarine;
+}
+#title{
+    background-color: #ff6366;
+}

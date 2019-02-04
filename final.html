@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Item Management</title>
+  <link rel="stylesheet" href="resturant2.css">
+</head>
+
+<body onload="load()">
+  <script>
+    var tally = localStorage.getItem('totalItemTally');
+    var grandSubTotal = localStorage.getItem('totalItemSum');
+    var grandTaxTotal = grandSubTotal * 1.04712;
+    function load() {
+    document.getElementById('tally').innerHTML = tally;
+    document.getElementById('total').innerHTML = "Your Total with Tax: $" + grandTaxTotal.toFixed(2);
+    }
+    function addTip(){
+      document.getElementById('total').innerHTML = "";
+      var newPrice = grandTaxTotal * 1.05;
+      document.getElementById('total').innerHTML ="New Total with Tax: $" + newPrice.toFixed(2);
+    }
+    
+    function addTip2(){
+      document.getElementById('total').innerHTML = "";
+      var newPrice = grandTaxTotal * 1.10;
+      document.getElementById('total').innerHTML ="New Total with Tax: $" + newPrice.toFixed(2);
+    }
+    function addTip3(){
+      document.getElementById('total').innerHTML = "";
+      var newPrice = grandTaxTotal * 1.15;
+      document.getElementById('total').innerHTML ="New Total with Tax: $" + newPrice.toFixed(2);
+    }
+    
+    function goBack(){
+     location.href = "index.html";
+    }
+  </script>
+  <div id="title">
+    <h1>Axel's Sustenance Palace</h1>
+  </div>
+    <div id='ItemDiv'>
+      
+     <h1>Total for order:</h1>
+     <p id="tally"></p>
+     <p id="total"></p>
+     <div class = "tip" onclick="addTip2()">Add 10% Tip</div>
+     <div class = "tip" onclick="addTip()">Add 5% Tip</div>
+     <div class = "tip" onclick="addTip3()">Add 15% Tip</div>
+     <div class = "tip" onclick="goBack()">Finish and pay</div>
+    </div>
+</body>
+</head>

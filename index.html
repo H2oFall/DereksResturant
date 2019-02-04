@@ -1,36 +1,96 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="resturant.css" async>
-    <script src="resturant.js" defer></script>
-  </head>
-    <body>
-      <div id="menu">
-        <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-      <h1 id="itemOneName">Item One</h1>
-      <p id="itemOneDesc">"Item Description"</p>
-      <p id="itemOnePrice">"Price"</p>
-    <form onsubmit="event.preventDefault(); addamountitem1()">
-        <input type="number" id="itemoneamount" min=1 max=100>
-        <input type="submit" id="input">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Item Management</title>
+  <link rel="stylesheet" href="resturant2.css">
+</head>
+
+<body>
+  <div id="name">
+    <h1>Axel's Sustenance Palace</h1>
+  </div>
+  <div id='ItemTable'>
+    <div id='ItemDiv'>
+          <h1 id="itemone">Item two</h1>
+          <p id="itemoneinfo">"Item infoription"</p>
+          <p id="itemonecost">"cost"</p>
+          <form onsubmit="event.preventDefault(); addamountitem1()">
+            <input type="number" id="itemoneamount" min=1 max=100>
+            <input type="submit" value="add to list" id="input">
+          </form>
+    </div>
+
+    <div id='ItemDiv'>
+      <h1 id="itemtwo">Item two</h1>
+      <p id="itemtwoinfo">"Item infoription"</p>
+      <p id="itemtwocost">"cost"</p>
+      <form onsubmit="event.preventDefault(); addamountitem2()">
+        <input type="number" id="itemtwoamount" min=1 max=100>
+        <input type="submit" value="add to list" id="input">
       </form>
   </div>
-</div>
 
-      </div>
-      <div id="quantity">
-        
-      </div>
-      <div id="total">
-        <ol id='List'>
-        </ol>
-      </div>
-      <div>
-        
-      </div>
-    <script>
+    <div id='ItemDiv'>
+      <h1 id="itemthree">Item three</h1>
+      <p id="itemthreeinfo">"Item infoription"</p>
+      <p id="itemthreecost">"cost"</p>
+      <form onsubmit="event.preventDefault(); addamountitem3()">
+        <input type="number" id="itemthreeamount" min=1 max=100>
+        <input type="submit" value="add to list" id="input">
+      </form>
+   </div>
 
-    </script>
-  </body>
-</html>
+    <div id='ItemDiv'>
+      <h1 id="itemfour" >Item four</h1>
+      <p id="itemfourinfo">"Item infoription"</p>
+      <p id="itemfourcost">"cost"</p>
+      <form onsubmit="event.preventDefault(); addamountitem4()">
+        <input type="number" id="itemfouramount" min=1 max=100>
+        <input type="submit" value="add to list" id="input">
+      </form>
+    </div>
+
+    <div id='ItemDiv'>
+      <h1 id="itemfive">Item five</h1>
+      <p id="itemfiveinfo">"Item infoription"</p>
+      <p id="itemfivecost">"cost"</p>
+      <form onsubmit="event.preventDefault(); addamountitem5()">
+        <input type="number" id="itemfiveamount" min=1 max=100>
+        <input type="submit" value="add to list" id="input">
+      </form>
+    </div>
+
+    <div id='ItemDiv'>
+      <h1 id="itemsix">Item six</h1>
+      <p id="itemsixinfo">"Item infoription"</p>
+      <p id="itemsixcost">"cost"</p>
+      <form onsubmit="event.preventDefault(); addamountitem6()">
+        <input type="number" id="itemsixamount" min=1 max=100>
+        <input type="submit" value="add to list" id="input">
+      </form>
+    </div>
+
+    <div id='itemLogDiv'>
+      <h1>Total for today:</h'>
+        <ol id='list'>
+          </ol>
+          <p id="grandTotal"></p>
+        <input type="button" id="CheckoutButton" value="Finish and Pay" onclick=javascript:checkout();>
+    </div>
+  </div>
+  <script>
+  var previous = null;
+var current = null;
+    setInterval(function(){
+        $.getJSON("items.json", function(json){
+            current = JSON.stringify(json);
+            if (previous && current && previous!==current){
+                location.reload();
+            }
+        });
+    }, 2000);</script>
+    <script src="resturant2.js"></script>
+</body>
